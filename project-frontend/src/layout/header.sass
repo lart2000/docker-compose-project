@@ -1,0 +1,38 @@
+.c-search-app-bar
+    .c-container-app-bar
+        display: flex 
+        justify-content: space-between
+    .c-menu
+        display: flex
+        justify-content: center
+        align-items: center
+    .c-menu__button
+    .c-menu__title
+    .c-search
+        width: 200px
+        display: flex
+        position: relative
+        background-color: rgba(255,255,255,.16)
+        transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,background 0.1s ease-in            
+        border-radius: 4px
+        &:focus-within 
+            width: 250px
+            .c-search__input
+                width: 178px
+        &:hover 
+            background-color: rgba(255,255,255,.25)
+    .c-search__icon
+        box-sizing: border-box
+        display: flex 
+        justify-content: center
+        align-items: center
+        width: 72px
+        padding: 5px 0
+        .c-icon
+            height: 24px
+    .c-search__input
+        width: 128px
+        border-radius: 5px
+        color: white
+        margin-right: 10px
+    

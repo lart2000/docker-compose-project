@@ -1,0 +1,4 @@
+FROM dpage/pgadmin4:latest  
+COPY docker-entrypoint.sh /home/
+RUN chmod +x /home/docker-entrypoint.sh \
+        && sh /home/docker-entrypoint.sh

@@ -1,56 +1,62 @@
 version: '3'
 services:
-  web:
-    build: 
-      context: .
-      dockerfile: Dockerfile-backend
-    image: carrot123/go-buffalo:1.0
-    ports:
-      - "3000:3000"
-    restart: always
-    volumes:
-      - ./project-backend:/go/src/github.com/lart2000/project-backend
-    command: [ "sh", "-c", "cd /go/src/github.com/lart2000/coreabeautyperu/project-backend buffalo dev" ] 
-    networks:
-      - backend
-    tty: 'true'
-  # web-frontend:
+  # web:
   #   build: 
   #     context: .
-  #     dockerfile: Dockerfile-frontend
+  #     dockerfile: Dockerfile-backend
+  #   image: carrot123/go-buffalo:1.0
+  #   ports:
+  #     - "3000:3000"
   #   restart: always
   #   volumes:
-  #     - ./project-frontend/nextjs-init:/home/node/project-frontend
-  #   ports:
-  #     - "4000:3000"
-  #   image: carrot123/nextjs-frontend
-  #   restart: always
-  #   command: [ "sh", "-c", "cd /home/node/project-frontend && npm install && npm run dev " ] 
-  #   networks:
-  #     - frontend
-  #   tty: 'true'
-  db:
-    image: postgres:latest
-    restart: always
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_PASSWORD=12345
-    networks:
-      - backend
-
-  # pg-admin:
-  #   image: dpage/pgadmin4:latest
-  #   restart: always
-  #   ports:
-  #     - "80:80"
-  #   environment:
-  #     - PGADMIN_DEFAULT_EMAIL=admin@domain.com
-  #     - PGADMIN_DEFAULT_PASSWORD=12345
+  #     - ./project-backend:/go/src/github.com/lart2000/project-backend
+  #   command: [ "sh", "-c", "cd /go/src/github.com/lart2000/coreabeautyperu/project-backend buffalo dev" ] 
   #   networks:
   #     - backend
+  #   tty: 'true'
+  web-frontend:
+    build: 
+      context: .
+      dockerfile: Dockerfile-frontend
+    restart: always
+    volumes:
+      - ./project-frontend:/home/node/project-frontend
+    ports:
+      - "3000:3000"
+    image: carrot123/nextjs-frontend
+    command: [ "sh", "-c", "cd /home/node/project-frontend && npm install && npm rebuild node-sass && npm run dev " ] 
+    networks:
+      - frontend
+    tty: 'true'
+  # db:
+  #   image: postgres:latest
+  #   restart: always
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     - POSTGRES_PASSWORD=12345
+  #   networks:
+  #     - backend
+
+  pg-admin:
+    build: 
+      context: .
+      dockerfile: Dockerfile-dpage-pdadmin4
+    image: carrot123/dpage-pdadmin4:1.0
+    # restart: alwaysdoc
+    ports:
+      - "8080:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@domain.com
+      - PGADMIN_DEFAULT_PASSWORD=12345
+    tty:  'true'
+    # command: ["sh","-c","sh /home/docker-entrypoint.sh"]
+    # extra_hosts:
+    # - "mylocalhost:45.230.199.154"
+    # networks:
+      # - backend
 networks:
   frontend:
-  backend:
+  # backend:
 
 

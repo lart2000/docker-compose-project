@@ -1,0 +1,13 @@
+{
+	"verbose": true,
+	"execMap": {
+		"php": "php",
+		"go"   : "go"
+	},
+	"ignore": ["node_modules", ".next",".git"],
+	"watch": ["./server",""],
+	"ext": "js json", 
+	"restartable": "rs",
+	"delay": "1000"
+		  
+}

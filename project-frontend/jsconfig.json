@@ -1,0 +1,25 @@
+{
+  
+   "compilerOptions": {
+   //   "target": "es2017",
+// //     //  "allowSyntheticDefaultImports": false, 
+//     "baseUrl": "./",
+//     // same values than 'module-resolver' in .babelrc
+   //   "paths": { 
+   //    "sass/*"        : ["./src/sass/*"],
+   //    "sass_pages/*"  : ["./src/sass/pages/*"],
+   //    "sass_modules/*": ["./src/sass/modules/*"],
+   //    "components/*"  : ["./src/components/*"],
+   //    "icons/*"       : ["./src/icons/*"],
+   //    "utils/*"       : ["./src/utils/*"],
+   //    "views/*"       : ["./src/views/*"],
+   //    "r-redux/*"     : ["./redux/*"],
+   //    "*/"  : ["./node_modules/*"]
+   //   },
+//    },
+//    "exclude": [ ".git",".next",".vscode"],
+//   //  "include": [ "node_modules"],
+
+        "experimentalDecorators": true
+    }
+ }

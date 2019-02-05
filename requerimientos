@@ -1,0 +1,35 @@
+profile
+    user_name
+    name 
+    lastname
+    photo
+notify  (se pueden delete categories)
+    photo article 
+    category(enviado- recordatoria ,etc)
+    name article
+    description
+    saved_producto
+messages (se pueden enviar y recibir)
+    type 
+    title 
+    description
+    photo--logo
+categories 
+    name 
+    photo
+offers  (can order by categories)
+    photo_main
+    photo_secondaries .. (opctional)
+    title 
+    price 
+    opciones
+settings 
+    conditions of use 
+    privacity 
+shopping_car
+    article
+        title
+        type ( en carro , guradados, quitar de listas) toogle
+        available
+        price
+        stock
