@@ -10,10 +10,9 @@ services:
     restart: always
     volumes:
       - ./project-backend:/go/src/github.com/lart2000/project-backend
-    #command: [ "sh", "-c", "cd /go/src/github.com/lart2000/coreabeautyperu/project-backend buffalo dev" ] 
+    command: [ "sh", "-c", "cd /go/src/github.com/lart2000/coreabeautyperu/project-backend buffalo dev" ] 
     networks:
-      backend:
-        ipv4_address: 172.28.1.1
+      - backend
     tty: 'true'
   # web-frontend:
   #   build: 
@@ -38,9 +37,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=12345
     networks:
-      backend:
-        ipv4_address: 172.28.1.2
-
+      - backend
 
   # pg-admin:
   #   image: dpage/pgadmin4:latest
@@ -53,9 +50,7 @@ services:
   #   networks:
   #     - backend
 networks:
-#   frontend:
+  frontend:
   backend:
-    ipam:
-      driver: default
-      config:
-        - subnet: 172.28.0.0/16
+
+
