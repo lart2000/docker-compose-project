@@ -1,0 +1,6 @@
+create_table("reviews") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("description", "string", {})
+	t.Column("valuations", "integer", {})
+	t.Column("order_product_id", "uuid", {})
+}

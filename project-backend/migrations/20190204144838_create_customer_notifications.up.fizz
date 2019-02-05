@@ -1,0 +1,5 @@
+create_table("customer_notifications") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("customer_id", "uuid", {})
+	t.Column("notification_id", "uuid", {})
+}

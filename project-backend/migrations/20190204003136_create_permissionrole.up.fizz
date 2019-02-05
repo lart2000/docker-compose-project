@@ -1,0 +1,5 @@
+create_table("permission_role") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("permision_id", "uuid", {})
+	t.Column("role_id", "uuid", {})
+}
