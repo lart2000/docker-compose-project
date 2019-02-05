@@ -1,0 +1,9 @@
+create_table("products") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("name", "string", {})
+	t.Column("stock", "integer", {})
+	t.Column("price", "decimal", {})
+	t.Column("description", "string", {})
+	t.Column("category_id", "uuid", {})
+	t.Column("brand_id", "uuid", {})
+}

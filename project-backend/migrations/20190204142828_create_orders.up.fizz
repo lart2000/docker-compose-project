@@ -1,0 +1,4 @@
+create_table("orders") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("customer_id", "uuid", {})
+}
